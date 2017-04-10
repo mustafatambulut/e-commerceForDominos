@@ -1,0 +1,214 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                @Html.ActionLink("Orders", "Index", "UserOrder", routeValues: null, htmlAttributes: new { id = "orderLink", @class = "list-group-item" }) <span class="label label-danger pull-right" style="position:relative;margin:-27px 15px 0 0;" id="orderCount">0</span>
+                <a href="#" class="list-group-item">Favourites <span class="label label-success pull-right">2</span></a>
+                <a href="#" class="list-group-item">Settings</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row carousel-holder">
+                <div class="col-md-12">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="slide-image" src="~/Content/e-Pizza/img/b1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="~/Content/e-Pizza/img/b2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="slide-image" src="~/Content/e-Pizza/img/b3.jpg" alt="">
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Content/e-Pizza/img/a1.jpg" alt="">
+                        <div class="caption card-description">
+                            <h4 class="pull-right">19.99 TL</h4>
+                            <h4>
+                                <a href="#">First Pizza</a>
+                            </h4>
+                            <p>
+                                Fresh Dough, Cheese, Thin Crust Option, Pan Sauce, Bacon, Pepperoni
+                                <a href="#" data-toggle="modal" data-target="#myModal">see more</a>..
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog" style="left:0%;">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">First Pizza</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p><b>Content&nbsp;:</b>Fresh Dough, Cheese, Thin Crust Option, Pan Sauce, Bacon, Pepperoni</p>
+                                                <p><b>Price&nbsp;&nbsp;:</b>19.99 TL</p>
+                                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </p>
+        </div>
+        <p style="margin: 6px 0px 10px 10px;"><a href="#" class="btn btn-primary" role="button" onclick="return setOrder('1','1','19.99');">Add List</a></p>
+    </div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="~/Content/e-Pizza/img/a2.jpg" alt="">
+        <div class="caption card-description">
+            <h4 class="pull-right">24.99 TL</h4>
+            <h4>
+                <a href="#">Second Pizza</a>
+            </h4>
+            <p>
+                Green Peppers, Mushrooms, Onions, Green Olives, Pineapple Tidbits
+                <a href="#" data-toggle="modal" data-target="#myModal2">see more</a>..
+                <div class="modal fade" id="myModal2" role="dialog">
+                    <div class="modal-dialog" style="left:0%;">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Second Pizza</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p><b>Content&nbsp;:</b>Green Peppers, Mushrooms, Onions, Green Olives, Pineapple Tidbits</p>
+                                <p><b>Price&nbsp;&nbsp;:</b>24.99 TL</p>
+                            </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+
+</div>
+            </div>
+                            </p>
+                        </div>
+<p style="margin: 6px 0px 10px 10px;"><a href="#" class="btn btn-primary" role="button" onclick="return setOrder('1', '2', '24.99');">Add List</a></p>
+                    </div>
+                </div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="~/Content/e-Pizza/img/a3.jpg" alt="">
+        <div class="caption card-description">
+            <h4 class="pull-right">34.99 TL</h4>
+            <h4>
+                <a href="#">Third Pizza</a>
+            </h4>
+            <p>
+                Banana Peppers, Ripe Olives, Parmesan/Romano, Spinach Alfredo Sauce
+                <a href="#" data-toggle="modal" data-target="#myModal3">see more</a>..
+                <div class="modal fade" id="myModal3" role="dialog">
+                    <div class="modal-dialog" style="left:0%;">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Third Pizza</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p><b>Content&nbsp;:</b>Banana Peppers, Ripe Olives, Parmesan/Romano, Spinach Alfredo Sauce</p>
+                                <p><b>Price&nbsp;&nbsp;:</b>34.99 TL</p>
+                            </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+
+</div>
+            </div>
+            </p>
+        </div>
+<p style="margin: 6px 0px 10px 10px;"><a href="#" class="btn btn-primary" role="button" onclick="return setOrder('1', '3', '34.99');">Add List</a></p>
+    </div>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="~/Content/e-Pizza/img/a4.jpg" alt="">
+        <div class="caption card-description">
+            <h4 class="pull-right">14.99 TL</h4>
+            <h4>
+                <a href="#">Fourth Pizza</a>
+            </h4>
+            <p>
+                Three Cheese Blend, Chicken BBQ Pizza Sauce, Jalapeno Peppers, Beef
+                <a href="#" data-toggle="modal" data-target="#myModal4">see more</a>..
+                <div class="modal fade" id="myModal4" role="dialog">
+                    <div class="modal-dialog" style="left:0%;">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Fourth Pizza</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p><b>Content&nbsp;:</b>Three Cheese Blend, Chicken BBQ Pizza Sauce, Jalapeno Peppers, Beef</p>
+                                <p><b>Price&nbsp;&nbsp;:</b>14.99 TL</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+
+            </p>
+        </div>
+<p style="margin: 6px 0px 10px 10px;"><a href="#" class="btn btn-primary" role="button" onclick="return setOrder('1', '4', '14.99');">Add List</a></p>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    countView("1");
+    function setOrder(userId, productId, orderAmount) {
+
+            var url = '/UserOrder/saveOrder';
+            $.getJSON(url, {user_id : userId, product_id : productId, order_amount : orderAmount }, function (data) {
+            })
+            alert("Your List Added Successfully!");
+            countView("1");
+    }
+
+    function countView(userId) {
+        var url = '/UserOrder/countOrder';
+        $.getJSON(url, { user_id: userId }, function (data) {
+            $("#orderCount").html(data.length);
+        })
+    }
+</script>

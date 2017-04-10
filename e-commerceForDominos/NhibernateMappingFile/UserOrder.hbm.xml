@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="e_commerceForDominos.NhibernateMappingFile.UserOrder, e_commerceForDominos" table="[USERORDER]" dynamic-insert="true" dynamic-update="true" lazy="true">
+
+    <id name="USER_ORDER_ID" type="int">
+      <column name="USER_ORDER_ID" sql-type="int" not-null="true"/>
+      <generator class="native" />
+    </id>
+
+    <property name="USER_ID" type="int">
+      <column name="USER_ID" sql-type="int" not-null="false"/>
+    </property>
+
+    <property name="PRODUCT_ID" type="int">
+      <column name="PRODUCT_ID" sql-type="int" not-null="false"/>
+    </property>
+
+    <property name="STATE" type="int">
+      <column name="STATE" sql-type="int" not-null="false"/>
+    </property>
+
+    <property name="ORDER_AMOUNT" type="double">
+      <column name="ORDER_AMOUNT" sql-type="float" not-null="false"/>
+    </property>
+    
+  </class>
+</hibernate-mapping>
