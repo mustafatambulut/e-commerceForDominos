@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>My Orders</h2>
+<ul id="myOrder"></ul>
+<a href="#" data-toggle="modal" data-target="#myModal" id="amount" style="margin-left:53px; background-color: #3b7abb;color:white;padding:12px;border-radius:6px;font-family:monospace;">Total Amount</a>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="left:0%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">TOTAL AMOUNT</h4>
+            </div>
+            <div class="modal-body">
+                <p id="amountPrice" style="text-decoration:line-through;color:grey;font-size:large;float:left;">0</p><p id="explain" style="float:left;font-size:large;font-family:serif;font-weight: 700;margin-left:20px;"></p>
+                <p id="realAmount" style="clear:both;font-size:large;font-weight:700;font-family:serif;">0</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default">Let's Order</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        call();
+
+        function call() {
+            $("#myOrder").empty();
+                var url = '/UserOrder/getOrderView';
+                $.getJSON(url, { user_id: '1' }, function (data) {
+                    var price = 0;
+                    var realPrice = 0;
+                    console.log(data);
+                    $.each(data, function (index, value) {
+                       
+                        $("#myOrder").append($("<li style='margin:14px;'><img src='../../Content/e-Pizza/img/a4.jpg' height='48' width='48' alt='' style='margin-right:20px;'>" + value.ORDER_AMOUNT +" TL<span style='margin-left:20px;cursor:pointer;font-size:large;' class='x' data='" + value.USER_ORDER_ID + "'>X</span></li>"));
+                        
+                        price += value.ORDER_AMOUNT;
+                    });
+                    realPrice = price -((price * 5) / 100);
+                   
+                    $("#amountPrice").html(price.toFixed(2) + " TL");
+                    $("#explain").html("Save %5 Offer on Your First Order!");
+                    $("#realAmount").html(realPrice.toFixed(2)+" TL");
+                    
+
+                });
+        }
+
+        $("#myOrder").on("click",".x", function () {
+            alert("Are you sure you want to remove this product from your list?");
+            var url2 = '/UserOrder/deleteOrder';
+            $.getJSON(url2, { user_id: $(this).attr("data") }, function (data) { });
+            call();
+        });
+
+        $("#amount").on("click", function () {
+            call();
+        });
+
+    });
+</script>
